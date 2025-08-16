@@ -59,3 +59,79 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+
+# Sistema de Gestión de Proyectos en Línea
+
+Este proyecto es una aplicación web para la gestión de proyectos, desarrollada como parte del curso de **Computación en la Nube** de la Universidad Técnica Nacional (UTN). [cite_start]La aplicación permite a los usuarios crear proyectos, asignar tareas, y monitorear el progreso en tiempo real.
+
+El sistema está construido con **Laravel 11** para el backend y **Filament 3** para el panel de administración, y está desplegado en **Microsoft Azure**.
+
+**URL de la aplicación en producción:** [https://planificador.azurewebsites.net/](https://planificador.azurewebsites.net/) *(Ejemplo, reemplaza con tu URL)*
+
+---
+
+## Características Implementadas
+
+* [cite_start]**Gestión de Proyectos (CRUD):** Creación, lectura, actualización y eliminación de proyectos[cite: 41].
+* [cite_start]**Gestión de Tareas (CRUD):** Creación, lectura, actualización y eliminación de tareas asociadas a un proyecto[cite: 42].
+* [cite_start]**Asignación de Recursos:** Posibilidad de asignar tareas a diferentes usuarios registrados en el sistema[cite: 43].
+* [cite_start]**Seguimiento de Progreso:** Sistema de estados (`Pendiente`, `En Progreso`, `Completada`) para tareas y proyectos[cite: 44].
+* [cite_start]**Visualización de Avance:** Una barra de progreso en la lista de proyectos que calcula el porcentaje de tareas completadas en tiempo real[cite: 52].
+* [cite_start]**Búsqueda y Filtros:** Funcionalidad para buscar y filtrar proyectos y tareas por nombre o estado[cite: 51].
+
+---
+
+## Tecnologías Utilizadas
+
+* **Backend:** PHP 8.2, Laravel 11
+* **Frontend / UI:** Filament 3 (Livewire, Blade, Tailwind CSS)
+* **Base de Datos:** PostgreSQL
+* **Control de Versiones:** Git, GitHub
+* **Plataforma de Despliegue:** Microsoft Azure (App Service + Azure DB for PostgreSQL)
+
+---
+
+## Instalación y Ejecución en Local
+
+Sigue estos pasos para ejecutar el proyecto en tu entorno de desarrollo local.
+
+1.  **Clonar el repositorio:**
+    ```bash
+    git clone [https://github.com/](https://github.com/)<tu-usuario>/<tu-repositorio>.git
+    cd <nombre-del-repositorio>
+    ```
+
+2.  **Instalar dependencias de Composer:**
+    ```bash
+    composer install
+    ```
+
+3.  **Crear y configurar el archivo de entorno:**
+    ```bash
+    cp .env.example .env
+    ```
+    Abre el archivo `.env` y configura tus variables, especialmente la conexión a tu base de datos local.
+
+4.  **Generar la llave de la aplicación:**
+    ```bash
+    php artisan key:generate
+    ```
+
+5.  **Ejecutar las migraciones de la base de datos:**
+    ```bash
+    php artisan migrate
+    ```
+
+6.  **Crear un usuario administrador:**
+    ```bash
+    php artisan make:filament-user
+    ```
+    Sigue las instrucciones en la consola para crear tu primer usuario.
+
+7.  **Iniciar el servidor de desarrollo:**
+    ```bash
+    php artisan serve
+    ```
+
+8.  Abre tu navegador y ve a `http://127.0.0.1:8000/admin` para iniciar sesión.
